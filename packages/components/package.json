@@ -1,0 +1,30 @@
+{
+  "name": "@flylab/antd",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A react library developed with dumi",
+  "homepage": "https://gitlab.itcjf.com/yapeng.ma/efcs-biz-com/tree/master/packages/components",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "father build"
+  },
+  "dependencies": {
+    "styled-components": "^6.1.11"
+  },
+  "devDependencies": {
+    "antd": "^5.5.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,28 +1,28 @@
 {
-  "name": "tct_efcs",
-  "version": "0.0.1",
+  "name": "flylab",
+  "version": "0.1.0",
+  "private": true,
   "description": "A react library developed with dumi",
+  "homepage": "https://gitlab.itcjf.com/yapeng.ma/efcs-biz-com",
+  "license": "MIT",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "start": "npm run dev",
-    "dev": "dumi dev",
-    "build": "father build",
+    "build": "father -r build",
     "build:watch": "father dev",
+    "dev": "dumi dev",
     "docs:build": "dumi build",
     "docs:preview": "dumi preview",
-    "prepare": "husky install && dumi setup",
     "doctor": "father doctor",
     "lint": "npm run lint:es && npm run lint:css",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+    "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build"
   },
-  "authors": [],
-  "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -45,29 +45,60 @@
       "prettier --parser=typescript --write"
     ]
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@amap/amap-jsapi-types": "^0.0.8",
+    "@babel/runtime": "^7.26.0",
+    "@dimjs/lang": "^1.5.0",
+    "@dimjs/utils": "^1.5.1",
+    "ahooks": "^3.7.7",
+    "codemirror": "^6.0.1",
+    "dayjs": "^1.11.7",
+    "moment": "^2.30.1",
+    "react-error-boundary": "^4.0.13",
+    "react-router-dom": "^6.24.0"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.7",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
     "@umijs/lint": "^4.0.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "BaseSelect": "link:rc-select/lib/BaseSelect",
     "dumi": "^2.3.0",
-    "eslint": "^8.23.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
     "father": "^4.1.0",
     "husky": "^8.0.1",
+    "js-beautify": "^1.15.1",
+    "less": "^4.2.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.18",
+    "rc-select": "^14.15.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "stylelint": "^14.9.1"
+    "react-syntax-highlighter": "^15.5.0",
+    "stylelint": "^14.9.1",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "antd": "5.5.1",
+    "react": ">=18.3.1",
+    "react-dom": ">=18.3.1"
+  },
+  "engines": {
+    "node": ">=8.10.3 <12.13.0",
+    "npm": ">=6.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
