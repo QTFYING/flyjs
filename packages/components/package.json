@@ -18,7 +18,11 @@
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
-    "antd": "^5.5.1"
+    "@ant-design/icons": "^5.5.1",
+    "antd": "^5.5.1",
+    "classnames": "^2.5.1",
+    "lunar-typescript": "^1.7.5",
+    "rc-picker": "^4.7.0"
   },
   "peerDependencies": {
     "react": ">=16.9.0",
