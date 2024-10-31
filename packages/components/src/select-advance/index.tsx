@@ -2,7 +2,7 @@ import type { SelectProps } from 'antd';
 import { Checkbox, Row, Select, Tag, Typography } from 'antd';
 import { CheckboxChangeEvent } from 'antd/es/checkbox';
 import { useEffect, useState } from 'react';
-interface ISelectAdvanceProps {
+interface IAdvanceSelectProps {
   title?: string;
   mode?: SelectProps['mode'];
   showSelectAll?: boolean;
@@ -22,7 +22,7 @@ interface ISelectAdvanceProps {
  * @param value form自动注入，如果有值，则自动填入form表单中
  */
 
-export function SelectAdvance(props: ISelectAdvanceProps & SelectProps) {
+export function AdvanceSelect(props: IAdvanceSelectProps & SelectProps) {
   const {
     options = [],
     title = '全选',

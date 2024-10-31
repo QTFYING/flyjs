@@ -1,7 +1,7 @@
 ---
 nav:
   path: /components
-title: SelectAdvance 选择器
+title: AdvanceSelect
 toc: content
 group:
   title: 表单元素
@@ -10,7 +10,7 @@ demo:
   cols: 1
 ---
 
-# SelectAdvance
+# AdvanceSelect
 
 基于 Antd 封装的全能的 Select 组件
 

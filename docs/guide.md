@@ -1,33 +1,34 @@
 ### 所用技术栈
 
 - 高德地图
-- [Ant Design](https://ant-design.antgroup.com/index-cn)
+- [ant design](https://ant-design.antgroup.com/index-cn)
 - [ahooks](https://ahooks.js.org/guide)
 - [dayjs](https://dayjs.fenxianglu.cn)
 - [moment](https://momentjs.com)
 - [lodash](https://lodash.com/docs/4.17.15)
 
-### 其他技术栈
+### 工程技术栈
 
 - pnpm
 - monorepo
 - changesets
 - dumi
+- father
 
 ### 使用方法
 
 :::code-group
 
 ```bash [npm]
-npm install @efcs/components
+npm install @fly/antd
 ```
 
 ```bash [yarn]
-yarn add @efcs/components
+yarn add @fly/antd
 ```
 
 ```bash [pnpm]
-pnpm add @efcs/components
+pnpm add @fly/antd
 ```
 
 :::

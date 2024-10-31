@@ -9,7 +9,6 @@ group:
 hideActions: ["CSB"]
 demo:
   cols: 2
-keywords: ['2131']
 ---
 
 # If
@@ -23,7 +22,7 @@ keywords: ['2131']
 ## 代码演示
 
 ```jsx
-import { If } from '@efcs/components';
+import { If } from '@fly/components';
 
 export default () => {
   return <If isTrue={true}>我渲染出来啦。。。</If>;

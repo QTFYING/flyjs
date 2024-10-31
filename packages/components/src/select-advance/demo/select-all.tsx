@@ -1,4 +1,4 @@
-import { If, SelectAdvance } from '@efcs/components';
+import { AdvanceSelect, If } from '@fly/components';
 import type { RadioChangeEvent } from 'antd';
 import { Button, Form, Radio } from 'antd';
 import beautify from 'js-beautify';
@@ -55,7 +55,7 @@ const App: React.FC = () => {
             const valType = form.getFieldValue('valType');
             return (
               <Form.Item name="invoiceType" label="发票类型选择">
-                <SelectAdvance
+                <AdvanceSelect
                   options={dataSource}
                   mode="multiple"
                   title="发票类型"

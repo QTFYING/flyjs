@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "description": "A react library developed with dumi",
-  "homepage": "https://gitlab.itcjf.com/yapeng.ma/efcs-biz-com/tree/master/packages/components",
+  "homepage": "https://github.com/qtfying/flyjs/tree/dev_dumi/packages/components",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

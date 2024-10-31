@@ -1,4 +1,4 @@
 import { If } from './if';
-import { SelectAdvance } from './select-advance';
+import { AdvanceSelect } from './select-advance';
 
-export { If, SelectAdvance };
+export { AdvanceSelect, If };

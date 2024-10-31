@@ -2,8 +2,8 @@
   "name": "flylab",
   "version": "0.1.0",
   "private": true,
-  "description": "A react library developed with dumi",
-  "homepage": "https://gitlab.itcjf.com/yapeng.ma/efcs-biz-com",
+  "description": "一套前端常用的工具类库",
+  "homepage": "https://github.com/qtfying/flyjs",
   "license": "MIT",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -93,10 +93,6 @@
     "antd": "5.5.1",
     "react": ">=18.3.1",
     "react-dom": ">=18.3.1"
-  },
-  "engines": {
-    "node": ">=8.10.3 <12.13.0",
-    "npm": ">=6.9.0"
   },
   "publishConfig": {
     "access": "public"

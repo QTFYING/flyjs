@@ -1,10 +1,10 @@
 ---
 hero:
   title: library
-  description: 基于同采通业务抽象而来的组件库
+  description: flylib，一个好用的前端工具集
   actions:
-    - text: 立即上手
+    - text: 工具简介
       link: /guide
-    - text: 更新日志
+    - text: 发版日志
       link: /log
 ---

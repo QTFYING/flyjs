@@ -1,5 +1,5 @@
 {
-  "name": "@efcs/components",
+  "name": "@fly/components",
   "version": "1.0.0",
   "private": false,
   "description": "A react library developed with dumi",

@@ -1,27 +1,27 @@
 {
-	"compilerOptions": {
-		"skipLibCheck": true,
-		"esModuleInterop": true,
-		"baseUrl": "./",
-		"target": "es6",
-		"module": "es2015",
-		"lib": ["dom", "dom.iterable", "esnext", "es2021"],
-		"allowJs": true,
-		"allowSyntheticDefaultImports": true,
-		"strict": false,
-		"forceConsistentCasingInFileNames": true,
-		"moduleResolution": "node", //node环境
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"noEmit": true,
-		"jsx": "react",
-		"paths": {
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "target": "es6",
+    "module": "es2015",
+    "lib": ["dom", "dom.iterable", "esnext", "es2021"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node", //node环境
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "paths": {
       "@@/*": [".dumi/tmp/*"],
-      "tct_efcs/components/*": ["./packages/components/src/*"],
-      "tct_efcs/hooks/*": ["./packages/hooks/src/*"]
+      "tct_fly/components/*": ["./packages/components/src/*"],
+      "tct_fly/hooks/*": ["./packages/hooks/src/*"]
     },
-		"experimentalDecorators": true
-	},
-	"include": [".dumirc.ts", "packages/**/*"],
+    "experimentalDecorators": true
+  },
+  "include": [".dumirc.ts", "packages/**/*"],
   "exclude": ["node_modules", "dist", "docs-dist"]
 }
