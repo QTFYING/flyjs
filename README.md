@@ -1,7 +1,7 @@
-# tct_efcs
+# antd
 
-[![NPM version](https://img.shields.io/npm/v/tct_efcs.svg?style=flat)](https://npmjs.org/package/tct_efcs)
-[![NPM downloads](http://img.shields.io/npm/dm/tct_efcs.svg?style=flat)](https://npmjs.org/package/tct_efcs)
+[![NPM version](https://img.shields.io/npm/v/antd.svg?style=flat)](https://npmjs.org/package/antd)
+[![NPM downloads](http://img.shields.io/npm/dm/antd.svg?style=flat)](https://npmjs.org/package/antd)
 
 A react library developed with dumi
 

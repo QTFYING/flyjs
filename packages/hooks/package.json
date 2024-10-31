@@ -1,0 +1,40 @@
+{
+  "name": "@fly/components",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A react library developed with dumi",
+  "homepage": "",
+  "bugs": {
+    "url": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "author": "",
+  "main": "./dist/esm/index.js",
+  "module": "./dist/esm/index.js",
+  "typings": "./dist/esm/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "father build"
+  },
+  "dependencies": {
+    "styled-components": "^6.1.11"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.34",
+    "antd": "^5.19.0"
+  },
+  "peerDependencies": {
+    "antd": ">=5.11.5",
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

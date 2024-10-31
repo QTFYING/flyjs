@@ -1,22 +1,10 @@
 ---
 hero:
   title: library
-  description: A react library developed with dumi
+  description: flylib，一个好用的前端工具集
   actions:
-    - text: Hello
-      link: /
-    - text: World
-      link: /
-features:
-  - title: Hello
-    emoji: 💎
-    description: Put hello description here
-  - title: World
-    emoji: 🌈
-    description: Put world description here
-  - title: '!'
-    emoji: 🚀
-    description: Put ! description here
+    - text: 工具简介
+      link: /guide
+    - text: 发版日志
+      link: /log
 ---
-
-tct_efcs
