@@ -24,7 +24,7 @@ export default defineConfig({
   },
   //别名：dumi 2不再感知 monorepo,需要手动配置包名到 src 的 alias。
   alias: {
-    '@fly/components': join(__dirname, 'packages/components/src'),
+    '@fly/antd': join(__dirname, 'packages/components/src'),
     '@fly/hooks': join(__dirname, 'packages/hooks/src'),
     '@fly/utils': join(__dirname, 'packages/utils/src'),
     '@fly/example': join(__dirname, 'packages/utils/src'),

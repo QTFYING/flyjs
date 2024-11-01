@@ -17,7 +17,7 @@ demo:
 ## 代码演示
 
 ```jsx
-import { CalendarOverview } from '@fly/components';
+import { CalendarOverview } from '@fly/antd';
 
 export default () => {
   return (

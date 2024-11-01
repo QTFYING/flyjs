@@ -1,21 +1,25 @@
 ---
 nav:
-  path: /components
-title: If
+  path: /hooks
+title: useTree
 toc: content
 group:
-  title: 逻辑组件
+  title: 树的方法
   order: 1
 hideActions: ['CSB']
 demo:
   cols: 2
 ---
 
-# If
+# useTree
 
 在 React 项目中用来替代三元表达式的而特意封装的一个组件
 
 :::warning
+该组件在 antd 的 `Descriptions` 中的 item 以及类似组件中无法使用。
+:::
+
+:::info
 该组件在 antd 的 `Descriptions` 中的 item 以及类似组件中无法使用。
 :::
 

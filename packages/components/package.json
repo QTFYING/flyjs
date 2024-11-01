@@ -1,9 +1,9 @@
 {
   "name": "@flylab/antd",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
-  "description": "A react library developed with dumi",
-  "homepage": "https://github.com/qtfying/flyjs/tree/dev_dumi/packages/components",
+  "description": "基于 antd 封装的组件库",
+  "homepage": "https://github.com/qtfying/flyjs/tree/master/packages/components",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -18,17 +18,21 @@
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
-    "@ant-design/icons": "^5.5.1",
-    "antd": "^5.5.1",
     "classnames": "^2.5.1",
     "lunar-typescript": "^1.7.5",
     "rc-picker": "^4.7.0"
   },
   "peerDependencies": {
+    "@ant-design/icons": "^5.5.1",
+    "antd": "^5.5.1",
     "react": ">=16.9.0",
     "react-dom": ">=16.9.0"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "externals": {
+    "antd": "antd",
+    "react": "react"
   }
 }

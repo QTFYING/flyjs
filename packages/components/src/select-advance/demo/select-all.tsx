@@ -1,4 +1,4 @@
-import { AdvanceSelect, If } from '@fly/components';
+import { AdvanceSelect, If } from '@fly/antd';
 import type { RadioChangeEvent } from 'antd';
 import { Button, Form, Radio } from 'antd';
 import beautify from 'js-beautify';

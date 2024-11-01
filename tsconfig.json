@@ -17,8 +17,8 @@
     "jsx": "react",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
-      "tct_fly/components/*": ["./packages/components/src/*"],
-      "tct_fly/hooks/*": ["./packages/hooks/src/*"]
+      "fly/antd/*": ["./packages/components/src/*"],
+      "fly/hooks/*": ["./packages/hooks/src/*"]
     },
     "experimentalDecorators": true
   },

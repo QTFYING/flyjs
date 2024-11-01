@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "father -r build",
+    "build": "father build",
     "build:watch": "father dev",
     "dev": "dumi dev",
     "docs:build": "dumi build",
