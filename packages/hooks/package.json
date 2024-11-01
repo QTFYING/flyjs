@@ -1,6 +1,6 @@
 {
   "name": "@flylab/hooks",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "description": "抽离的平时常用的hooks函数",
   "homepage": "https://github.com/qtfying/flyjs/tree/master/packages/hooks",
