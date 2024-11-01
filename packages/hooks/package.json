@@ -1,5 +1,5 @@
 {
-  "name": "@fly/hooks",
+  "name": "@flylab/hooks",
   "version": "0.1.0",
   "private": false,
   "description": "抽离的平时常用的hooks函数",
