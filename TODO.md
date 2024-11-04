@@ -10,4 +10,5 @@
 ## 二期任务
 
 - [ ] npm 的每个包过大，需要优化包大小
-- [ ] github 接入 npm，实现自动发布
+- [x] github 接入 npm，实现自动发布
+- [ ] github 接入 gh-pages，实现自动发布

@@ -5,6 +5,7 @@
     "codemirror",
     "commitlint",
     "dumi",
+    "flyjs",
     "flylab",
     "packagejson",
     "stylelint",

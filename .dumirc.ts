@@ -1,11 +1,10 @@
 import { defineConfig } from 'dumi';
 import { join } from 'path';
-const basePath = '/';
 
 export default defineConfig({
   outputPath: 'docs-dist', //打包后文档的包名
-  base: basePath,
-  publicPath: basePath,
+  base: '/flyjs',
+  publicPath: '/flyjs/',
   hash: true, //文档包名是否生成hash，防止浏览器缓存
   apiParser: {},
   //解析目录

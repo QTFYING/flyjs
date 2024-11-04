@@ -11,8 +11,8 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 # 按照顺序运行作业
 jobs:
-  release:
-    name: NPM PUBLISH
+  deploy:
+    name: deploy
     # 指定运行器环境
     runs-on: ubuntu-latest
     steps:
@@ -30,24 +30,11 @@ jobs:
         with:
           version: 9.11.0
 
-      - name: install dependencies
-        run: pnpm install
+      - name: build with dumi
+        run: pnpm docs:build
 
-      - name: build
-        run: pnpm -r build
-
-      - name: create github releases
-        id: changesets
-        uses: changesets/action@v1
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          title: Changeset Auto PR
-          createGithubReleases: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: publish
-        if: steps.changesets.outputs.hasChangesets == 'false'
-        run: npx changeset publish
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs-dist
