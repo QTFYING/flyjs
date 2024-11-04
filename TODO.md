@@ -4,7 +4,7 @@
 
 - [x] 脚手架搭建完成，成功发布至 npm 包 @flylab/antd
 - [x] 完成一例 hooks，成功发布至 npm 包 @flylab/hooks
-- [ ] 接入 changesets 版本管理工具
+- [x] 接入 changesets 版本管理工具
 - [ ] less 文件没有压缩编译
 
 ## 二期任务
