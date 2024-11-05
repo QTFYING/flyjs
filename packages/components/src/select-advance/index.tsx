@@ -1,7 +1,7 @@
 import type { SelectProps } from 'antd';
-import { Checkbox, Row, Select, Tag, Typography } from 'antd';
+import { Checkbox, message, Row, Select, Tag, Typography } from 'antd';
 import { CheckboxChangeEvent } from 'antd/es/checkbox';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 interface IAdvanceSelectProps {
   title?: string;
   mode?: SelectProps['mode'];
@@ -9,6 +9,8 @@ interface IAdvanceSelectProps {
   options: SelectProps['options'];
   onChange?: (options: unknown) => void;
   value?: string[];
+  /** 改变select的option时触发 */
+  onChangeOptions?: (value: any[], options: any[]) => void;
 }
 
 /**
@@ -17,9 +19,10 @@ interface IAdvanceSelectProps {
  * @param title 非必传，多选时有效，显示
  * @param showSelectAll 非必传，多选时有效，是否隐藏多选按钮，默认为true，显示
  * @param options select的options
- * @param title modal的title
  * @param onChange form自动注入，自定义form-item
  * @param value form自动注入，如果有值，则自动填入form表单中
+ *  @param maxCount 最大能选择的数量;
+ * @param onChangeOptions 修改select本身的onChange为onChangeOptions
  */
 
 export function AdvanceSelect(props: IAdvanceSelectProps & SelectProps) {
@@ -29,46 +32,53 @@ export function AdvanceSelect(props: IAdvanceSelectProps & SelectProps) {
     onChange,
     placeholder,
     mode,
+    maxCount = 0,
+    value,
     ...rest
   } = props;
   const [selectAllSt, setSelectAllSt] = useState<boolean>(false);
-  const [selectValue, setSelectValue] = useState<
-    Array<string | number | undefined | null>
-  >([]);
 
   useEffect(() => {
-    setSelectValue(props?.value ?? []);
-    if (props?.value?.length === options?.length) setSelectAllSt(true);
+    setSelectAllSt(value?.length === options?.length);
   }, [props, options]);
 
   const onClickSelectAll = (event: CheckboxChangeEvent) => {
     if (event.target.checked) {
-      const option = options.map((item) => item.value);
-      setSelectValue(option);
-      void onChange?.(option);
+      const ids = options.map((item) => item.value);
+      void onChange?.(rest?.labelInValue ? options : ids);
     } else {
-      setSelectValue([]);
       void onChange?.([]);
     }
     setSelectAllSt(event.target.checked);
   };
 
   const onChangeSelect = (value: any) => {
-    setSelectValue(value);
-    void onChange?.(value);
+    if (!!maxCount && value?.length > maxCount) {
+      void message.warning(`最多只能选择${maxCount}个`);
+      return;
+    }
+
+    const opts = value?.map((item: any) => {
+      if (item instanceof Object && !Array.isArray(item)) {
+        return options?.find((i) => i.value === item.value);
+      }
+      return options?.find((i) => i.value === item);
+    });
+
+    if (props?.onChangeOptions) props?.onChangeOptions?.(value, opts);
+
+    void onChange?.(rest?.labelInValue ? opts : value);
     setSelectAllSt(value.length === options.length);
   };
 
   const summary = () => {
     return (
       <Row justify="space-between">
-        <Typography.Text
-          strong
-        >{`${title} (${selectValue.length}/${options.length})`}</Typography.Text>
+        <Typography.Text strong>
+          {`${title} (${value?.length ?? 0}/${options?.length})`}
+        </Typography.Text>
         <Checkbox
-          indeterminate={
-            selectValue?.length !== options?.length && !!selectValue?.length
-          }
+          indeterminate={value?.length !== options?.length && !!value?.length}
           checked={selectAllSt}
           onChange={onClickSelectAll}
         />
@@ -98,7 +108,7 @@ export function AdvanceSelect(props: IAdvanceSelectProps & SelectProps) {
     <Select
       optionFilterProp="label"
       {...rest}
-      value={selectValue}
+      value={value}
       placeholder={placeholder || '请选择'}
       {...(mode ? { mode: mode, tagRender } : null)}
       options={

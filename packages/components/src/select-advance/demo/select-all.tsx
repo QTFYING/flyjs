@@ -2,7 +2,7 @@ import { AdvanceSelect, If } from '@fly/antd';
 import type { RadioChangeEvent } from 'antd';
 import { Button, Form, Radio } from 'antd';
 import beautify from 'js-beautify';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierLakesideLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
@@ -14,7 +14,6 @@ interface IFormValue {
 const App: React.FC = () => {
   const [form] = Form.useForm<IFormValue>();
   const [resultJSON, setResultJSON] = useState('');
-  const [valType, setValType] = useState('1');
 
   const onFinish = (values: IFormValue) => {
     setResultJSON(JSON.stringify(values, null, 2));
@@ -22,7 +21,7 @@ const App: React.FC = () => {
 
   const onChange = (e: RadioChangeEvent) => {
     form.setFieldValue('invoiceType', []);
-    setValType(e.target.value);
+    setResultJSON('');
   };
 
   const dataSource = [

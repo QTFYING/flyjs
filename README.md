@@ -1,9 +1,6 @@
 # flyjs
 
-[![flylib/antd]](https://www.npmjs.com/package/@flylab/antd)
-[![flylib/hooks]](https://www.npmjs.com/package/@flylab/hooks)
-
-flyjs，一个前端工具集。
+flyjs，一个前端工具集。[去看看~](https://qtfying.github.io/flyjs)
 
 ## 🔨 Usage
 
