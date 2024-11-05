@@ -6,6 +6,9 @@ export default defineConfig({
   platform: 'browser',
   prebundle: {
     // 只配置要预打包的依赖
-    deps: ['antd'],
+    deps: {
+      antd: { minify: true },
+      rimraf: { minify: false },
+    },
   },
 });

@@ -8,6 +8,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'packages/**' # 只在 packages 目录下的文件发生变化时触发
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 # 按照顺序运行作业
 jobs:

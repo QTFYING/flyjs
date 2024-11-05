@@ -5,9 +5,12 @@
     "codemirror",
     "commitlint",
     "dumi",
+    "fatherrc",
     "flyjs",
     "flylab",
+    "flylib",
     "packagejson",
+    "prebundle",
     "stylelint",
     "umijs"
   ]
