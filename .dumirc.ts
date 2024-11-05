@@ -26,39 +26,34 @@ export default defineConfig({
     '@fly/antd': join(__dirname, 'packages/components/src'),
     '@fly/hooks': join(__dirname, 'packages/hooks/src'),
     '@fly/utils': join(__dirname, 'packages/utils/src'),
-    '@fly/example': join(__dirname, 'packages/utils/src'),
   },
   themeConfig: {
-    logo: '/favicon.png',
-    name: 'fly',
+    logo: 'https://img.icons8.com/stickers/300/woody-woodpecker.png',
+    name: 'flyjs',
+    showLineNum: true,
     nav: [
-      {
-        title: '组件',
-        link: '/components/overview',
-      },
-      {
-        title: 'Hooks',
-        link: '/hooks/overview',
-      },
-      {
-        title: 'Utils',
-        link: '/utils/overview',
-      },
-      {
-        title: '用例',
-        link: '/example/overview',
-      },
-      {
-        title: '开发标准',
-        link: '/rules/overview',
-      },
+      { title: '组件', link: '/components/overview' },
+      { title: 'Hooks', link: '/hooks/overview' },
+      { title: 'Utils', link: '/utils/overview' },
+      { title: '用例', link: '/example/overview' },
+      { title: '开发标准', link: '/rules/overview' },
     ],
     prefersColor: { default: 'light', switch: false }, //主题色
     socialLinks: {
-      gitlab: 'https://gitlab.itcjf.com/yapeng.ma/fly-biz-com',
+      github: 'https://github.com/qtfying/flyjs',
     },
     footer: 'Copyright © 2024 | 寄蜉蝣于天地，心在水，水在渊，即天下共水',
   },
+  cssMinifierOptions: { minifyWhitespace: true, minifySyntax: true },
+  jsMinifierOptions: {
+    minifyWhitespace: true,
+    minifyIdentifiers: true,
+    minifySyntax: true,
+  },
+  clickToComponent: { editor: 'vscode' },
   devtool: process.env.NODE_ENV === 'development' ? 'eval' : false,
-  favicons: ['/favicon.png'],
+  favicons: ['https://img.icons8.com/stickers/300/woody-woodpecker.png'],
+  // externals: { react: 'React' },
+  // headScripts: ['https://unpkg.com/react@17.0.1/umd/react.production.min.js'],
+  mock: { include: ['.dumi/pages/**/_mock.ts'] },
 });

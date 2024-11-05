@@ -38,17 +38,19 @@ demo:
 ## 代码演示
 
 <!-- prettier-ignore -->
-<code src="./demo/select-all.tsx">多选用法</code>
+<code src="./demo/select-all.tsx">全选用法</code>
 <code src="./demo/select-label-name.tsx">label定制化</code>
 
 ## API
 
-| 参数          | 说明                                             | 类型                     | 默认值             | 版本 |
-| ------------- | ------------------------------------------------ | ------------------------ | ------------------ | ---- |
-| title         | options 的 title                                 | `string`                 | `全选`             |      |
-| mode          | 设置 Select 的模式为多选或标签                   | `SelectProps['mode']`    | `undefined`        |      |
-| showSelectAll | 是否启用全选功能                                 | `boolean`                | `true, 多选时有效` |      |
-| options       | select 的 options，建议均采用 options 的形式传入 | `SelectProps['options']` |                    |      |
+| 参数            | 说明                                             | 类型                      | 默认值             | 版本 |
+| --------------- | ------------------------------------------------ | ------------------------- | ------------------ | ---- |
+| title           | options 的 title                                 | `string`                  | `全选`             |      |
+| mode            | 设置 Select 的模式为多选或标签                   | `SelectProps['mode']`     | `undefined`        |      |
+| showSelectAll   | 是否启用全选功能                                 | `boolean`                 | `true`, 多选时有效 |      |
+| options         | select 的 options，建议均采用 options 的形式传入 | `SelectProps['options']`  |                    |      |
+| maxCount        | 最大可选数量                                     | `number`                  |                    |      |
+| onChangeOptions | 篡改的 Select 组件本身的 onChangeOptions         | `SelectProps['onChange']` |                    |      |
 
 ## Q & A
 

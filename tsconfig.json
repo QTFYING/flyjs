@@ -1,24 +1,21 @@
 {
   "compilerOptions": {
-    "skipLibCheck": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
     "esModuleInterop": true,
-    "baseUrl": "./",
-    "target": "es6",
-    "module": "es2015",
-    "lib": ["dom", "dom.iterable", "esnext", "es2021"],
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": false,
+    "strict": true,
+    "skipLibCheck": true,
+    "stripInternal": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node", //node环境
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react",
+    "declaration": true,
+    "baseUrl": ".",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
-      "fly/antd/*": ["./packages/components/src/*"],
-      "fly/hooks/*": ["./packages/hooks/src/*"]
+      "@fly/antd/*": ["packages/components/src/*"],
+      "@fly/hooks/*": ["packages/hooks/src/*"]
     },
     "experimentalDecorators": true
   },

@@ -1,7 +1,7 @@
 ---
 hero:
   title: library
-  description: flylib，一个好用的前端工具集
+  description: flyjs，一个好用的前端工具集
   actions:
     - text: 工具简介
       link: /guide
