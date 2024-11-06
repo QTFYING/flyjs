@@ -1,3 +1,4 @@
+import { fieldNamesLoop } from '@flylib/utils';
 import type { DataNode } from 'antd/es/tree';
 import { Key, useRef } from 'react';
 
@@ -17,11 +18,15 @@ interface TUseTreeType {
 
 /**
  * 自定义 useTree
- * @description 主要是处理网站中的各种树形数据
- * 目前方法基本上满足网站中所有的需求
+ *
+ * @param {Array<Object>} data - 需要遍历的数据数组。
+ * @param {Object} [fieldNames] - 字段名称映射对象，用于将源数据中的字段映射到新对象中。
+ * @param {number} [level] - 递归层级限制，如果指定了层级，超过该层级的子节点将不再递归。
+ * @returns {Array<Object>} - 生成的新对象数组
  */
 
-export const useTree = (data: DataNode[]): TUseTreeType => {
+export const useTree = (data: DataNode[], fieldNames: Record<string, string>, maxLevel: number): TUseTreeType => {
+  const treeData = fieldNamesLoop(data, fieldNames, maxLevel);
   const treeNodeMapRef = useRef<Record<string, DataNode & IExtendParam>>({}); // 树中所有结点的枚举
   const flatTreeDataRef = useRef<DataNode[]>([]); // 打平所有的节点
 
@@ -59,7 +64,7 @@ export const useTree = (data: DataNode[]): TUseTreeType => {
           title,
           key: item.key,
           parentNodes: parentNodes?.slice(),
-          parentKeys: parentKeys?.slice()
+          parentKeys: parentKeys?.slice(),
         };
 
         if (item.children) {
@@ -70,8 +75,8 @@ export const useTree = (data: DataNode[]): TUseTreeType => {
             children: loop(
               item.children,
               [...parentNodes, { key: item.key, title: item.title, disabled: item.disabled }],
-              [...parentKeys, item.key]
-            )
+              [...parentKeys, item.key],
+            ),
           };
           Object.assign(options, extendParams);
         }
@@ -88,12 +93,12 @@ export const useTree = (data: DataNode[]): TUseTreeType => {
   };
 
   // 实例化
-  initTreeNodeMap(data);
+  initTreeNodeMap(treeData);
 
   return {
-    treeData: data,
+    treeData: treeData,
     treeDataMap: treeNodeMapRef.current,
     treeDataArray: flatTreeDataRef.current,
-    getTreeNodeInfo: getTreeNodeInfo
+    getTreeNodeInfo: getTreeNodeInfo,
   };
 };

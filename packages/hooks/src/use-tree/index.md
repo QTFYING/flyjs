@@ -4,35 +4,32 @@ nav:
 title: useTree
 toc: content
 group:
-  title: 树的方法
+  title: 树
   order: 1
 hideActions: ['CSB']
 demo:
-  cols: 2
+  cols: 1
 ---
 
 # useTree
 
-在 React 项目中用来替代三元表达式的而特意封装的一个组件
+用于在业务中处理树形状数据的方法集合。
 
 :::warning
-该组件在 antd 的 `Descriptions` 中的 item 以及类似组件中无法使用。
-:::
-
-:::info
-该组件在 antd 的 `Descriptions` 中的 item 以及类似组件中无法使用。
+限制渲染的最大层级 - 未实现<br>
+获取树中所有的非禁用节点 - demo 待编写<br>
 :::
 
 ## 代码演示
 
-```jsx
-import { If } from '@fly/antd';
-
-export default () => {
-  return <If isTrue={true}>我渲染出来啦。。。</If>;
-};
-```
+<!-- prettier-ignore -->
+<code src="./demo/parallel.tsx" description="不同的树组件接收不同的结构，通过参数映射可以源数据映射为目标组件的数据结构">参数映射</code>
+<code src="./demo/get-node-info.tsx" description="`getTreeNodeInfo`方法用来获取当前节点信息，包括`title`、`key`、`parentKeys`、`parentNodes`、`childrenKeys`、`childrenNodes`所有节点信息，可用来拼接父级路径、获取直属父级、直接下级等">获取节点信息</code>
 
 ## API
 
-<API id="If"></API>
+| 参数       | 说明                                                         | 类型                     | 默认值 | 版本 |
+| ---------- | ------------------------------------------------------------ | ------------------------ | ------ | ---- |
+| data       | 要处理的树形数据                                             | `DataNode[]`             |        |      |
+| fieldNames | 映射关系，比如将 `label` 映射为 `title`， `{title: 'label'}` | `Record<string, string>` |        |
+| maxLevel   | 限制数据输出的最大层级                                       | `number`                 | `null` |      |

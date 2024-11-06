@@ -1,9 +1,9 @@
 {
-  "name": "@flylab/hooks",
-  "version": "0.1.4",
+  "name": "@flylab/utils",
+  "version": "0.1.1",
   "private": false,
-  "description": "抽离的平时常用的hooks函数",
-  "homepage": "https://github.com/qtfying/flyjs/tree/master/packages/hooks",
+  "description": "收集的平时常用的公共函数",
+  "homepage": "https://github.com/qtfying/flyjs/tree/master/packages/utils",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
