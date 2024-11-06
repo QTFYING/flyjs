@@ -39,7 +39,7 @@ demo:
 
 <!-- prettier-ignore -->
 <code src="./demo/select-all.tsx">全选用法</code>
-<code src="./demo/select-label-name.tsx">label定制化</code>
+<code src="./demo/max-count.tsx" description="antd官方自v5.13增加`maxCount`实现该功能，因此该功能只在达到最大可选数量时，进行了拦截提醒，建议升级至[目标版本](https://ant-design.antgroup.com/components/select-cn#select-demo-responsive)以上">可选最大数量</code>
 
 ## API
 

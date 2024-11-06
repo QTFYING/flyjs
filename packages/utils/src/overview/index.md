@@ -1,6 +1,6 @@
 ---
-category: Components
-title: 组件总览
+category: Utils
+title: 总览
 showImport: false
 ---
 

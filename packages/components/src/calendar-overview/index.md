@@ -23,7 +23,7 @@ demo:
  * compact: true
  * description: 日历看板，目前暂时不接受任何定制，如需定制，请自行实现
  */
-import { CalendarOverview } from '@fly/antd';
+import { CalendarOverview } from '@flylib/antd';
 
 export default () => {
   return (

@@ -32,6 +32,7 @@ export function AdvanceSelect(props: IAdvanceSelectProps & SelectProps) {
     onChange,
     placeholder,
     mode,
+    showSelectAll = true,
     maxCount = 0,
     value,
     ...rest
@@ -74,9 +75,7 @@ export function AdvanceSelect(props: IAdvanceSelectProps & SelectProps) {
   const summary = () => {
     return (
       <Row justify="space-between">
-        <Typography.Text strong>
-          {`${title} (${value?.length ?? 0}/${options?.length})`}
-        </Typography.Text>
+        <Typography.Text strong>{`${title} (${value?.length ?? 0}/${options?.length})`}</Typography.Text>
         <Checkbox
           indeterminate={value?.length !== options?.length && !!value?.length}
           checked={selectAllSt}
@@ -94,11 +93,7 @@ export function AdvanceSelect(props: IAdvanceSelectProps & SelectProps) {
       event.stopPropagation();
     };
     return (
-      <Tag
-        onMouseDown={onPreventMouseDown}
-        closable={closable}
-        onClose={onClose}
-      >
+      <Tag onMouseDown={onPreventMouseDown} closable={closable} onClose={onClose}>
         {label}
       </Tag>
     );
@@ -111,9 +106,7 @@ export function AdvanceSelect(props: IAdvanceSelectProps & SelectProps) {
       value={value}
       placeholder={placeholder || '请选择'}
       {...(mode ? { mode: mode, tagRender } : null)}
-      options={
-        mode ? [{ label: summary(), options: options }] : (options as [])
-      }
+      options={mode && showSelectAll && !maxCount ? [{ label: summary(), options: options }] : (options as [])}
       onChange={onChangeSelect}
     />
   );

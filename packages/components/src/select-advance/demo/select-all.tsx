@@ -1,4 +1,4 @@
-import { AdvanceSelect, If } from '@fly/antd';
+import { AdvanceSelect, If } from '@flylib/antd';
 import type { RadioChangeEvent } from 'antd';
 import { Button, Form, Radio } from 'antd';
 import beautify from 'js-beautify';
@@ -16,7 +16,7 @@ const App: React.FC = () => {
   const [resultJSON, setResultJSON] = useState('');
 
   const onFinish = (values: IFormValue) => {
-    setResultJSON(JSON.stringify(values, null, 2));
+    setResultJSON(JSON.stringify(values));
   };
 
   const onChange = (e: RadioChangeEvent) => {

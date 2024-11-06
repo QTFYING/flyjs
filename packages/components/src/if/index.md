@@ -22,7 +22,11 @@ demo:
 ## 代码演示
 
 ```jsx
-import { If } from '@fly/antd';
+/**
+ * title: 基本示例
+ * description: 替代三元表达式的一种优雅写法
+ */
+import { If } from '@flylib/antd';
 
 export default () => {
   return <If isTrue={true}>我渲染出来啦。。。</If>;
