@@ -2,7 +2,7 @@ import { AdvanceSelect, If } from '@fly/antd';
 import type { RadioChangeEvent } from 'antd';
 import { Button, Form, Radio } from 'antd';
 import beautify from 'js-beautify';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierLakesideLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
@@ -56,6 +56,7 @@ const App: React.FC = () => {
             return (
               <Form.Item name="invoiceType" label="发票类型选择">
                 <AdvanceSelect
+                  allowClear
                   options={dataSource}
                   mode="multiple"
                   title="发票类型"

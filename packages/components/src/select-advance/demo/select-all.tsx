@@ -33,12 +33,7 @@ const App: React.FC = () => {
 
   return (
     <div className="page">
-      <Form
-        form={form}
-        onFinish={onFinish}
-        style={{ marginTop: 20 }}
-        initialValues={{ valType: '1' }}
-      >
+      <Form form={form} onFinish={onFinish} style={{ marginTop: 20 }} initialValues={{ valType: '1' }}>
         <Form.Item name="valType" label="获取值类型">
           <Radio.Group
             onChange={onChange}
@@ -55,6 +50,7 @@ const App: React.FC = () => {
             return (
               <Form.Item name="invoiceType" label="发票类型选择">
                 <AdvanceSelect
+                  allowClear
                   options={dataSource}
                   mode="multiple"
                   title="发票类型"
