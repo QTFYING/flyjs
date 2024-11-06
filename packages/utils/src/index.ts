@@ -1,2 +1,2 @@
-export * from './field_names_loop';
-export * from './is_empty';
+export * from './field-names-loop';
+export * from './is-empty';

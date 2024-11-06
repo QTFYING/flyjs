@@ -1,4 +1,4 @@
-import { isEmpty } from './is_empty';
+import { isEmpty } from '../is-empty';
 
 /**
  * 递归遍历数据结构，根据字段名称映射生成新的对象数组。

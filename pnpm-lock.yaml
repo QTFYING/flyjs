@@ -8,31 +8,25 @@ importers:
 
   .:
     dependencies:
-      '@babel/runtime':
-        specifier: ^7.26.0
-        version: 7.26.0
       ahooks:
         specifier: ^3.7.7
         version: 3.8.0(react@18.3.1)
       antd:
         specifier: 5.5.1
         version: 5.5.1(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      codemirror:
-        specifier: ^6.0.1
-        version: 6.0.1(@lezer/common@1.2.1)
       dayjs:
         specifier: ^1.11.7
         version: 1.11.11
       moment:
         specifier: ^2.30.1
         version: 2.30.1
-      react-error-boundary:
-        specifier: ^4.0.13
-        version: 4.0.13(react@18.3.1)
     devDependencies:
       '@ant-design/icons':
         specifier: ^5.5.1
         version: 5.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@babel/runtime':
+        specifier: ^7.26.0
+        version: 7.26.0
       '@changesets/cli':
         specifier: ^2.27.9
         version: 2.27.9
@@ -54,6 +48,9 @@ importers:
       babel-plugin-import:
         specifier: ^1.13.8
         version: 1.13.8
+      codemirror:
+        specifier: ^6.0.1
+        version: 6.0.1(@lezer/common@1.2.1)
       dumi:
         specifier: ^2.3.0
         version: 2.4.6(@babel/core@7.24.9)(@swc/helpers@0.5.1)(@types/node@20.5.1)(@types/react@18.3.3)(eslint@8.57.0)(lightningcss@1.22.1)(prettier@2.8.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.4)(stylelint@14.16.1)(terser@5.31.2)(type-fest@1.4.0)(typescript@5.5.3)(webpack@5.93.0(@swc/core@1.4.2(@swc/helpers@0.5.1)))
@@ -90,6 +87,9 @@ importers:
       react-dom:
         specifier: ^18.0.0
         version: 18.3.1(react@18.3.1)
+      react-error-boundary:
+        specifier: ^4.0.13
+        version: 4.0.13(react@18.3.1)
       react-syntax-highlighter:
         specifier: ^15.5.0
         version: 15.5.0(react@18.3.1)
