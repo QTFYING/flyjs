@@ -8,34 +8,40 @@ interface IExtendParam {
   childrenNodes?: Array<DataNode & IExtendParam>;
 }
 
+interface TUseTreeType {
+  treeData: DataNode[];
+  treeDataMap: Record<string, DataNode & IExtendParam>;
+  treeDataArray: DataNode[];
+  getTreeNodeInfo: (key: Key) => DataNode;
+}
+
 /**
  * 自定义 useTree
  * @description 主要是处理网站中的各种树形数据
  * 目前方法基本上满足网站中所有的需求
  */
 
-export const useTree = (data: DataNode[]) => {
+export const useTree = (data: DataNode[]): TUseTreeType => {
   const treeNodeMapRef = useRef<Record<string, DataNode & IExtendParam>>({}); // 树中所有结点的枚举
   const flatTreeDataRef = useRef<DataNode[]>([]); // 打平所有的节点
 
   // 向下递归 - children
+  // @ts-ignore
   const deepChildren = (source) => {
+    // @ts-ignore
     return source?.reduce((pre, cur) => {
       const { key, title, disabled } = cur;
       if (cur?.children?.length > 0) {
-        return [
-          ...pre,
-          { key, title, disabled },
-          ...deepChildren(cur.children),
-        ];
+        return [...pre, { key, title, disabled }, ...deepChildren(cur.children)];
       }
       return [...pre, { key, title, disabled }];
     }, []);
   };
 
   // 获取某个节点信息
-  const getTreeNodeInfo = (key): DataNode & IExtendParam =>
-    treeNodeMapRef.current?.[key];
+  const getTreeNodeInfo = (key: Key): DataNode & IExtendParam => {
+    return treeNodeMapRef.current?.[key as string | number];
+  };
 
   // 初始化
   const initTreeNodeMap = (data: DataNode[]) => {
@@ -43,11 +49,7 @@ export const useTree = (data: DataNode[]) => {
     const flatTreeData: Array<DataNode & IExtendParam> = [];
 
     // 递归循环，往节点中插入信息
-    const loop = (
-      data: DataNode[],
-      parentNodes: DataNode[] = [],
-      parentKeys: Key[] = [],
-    ): DataNode[] => {
+    const loop = (data: DataNode[], parentNodes: DataNode[] = [], parentKeys: Key[] = []): DataNode[] => {
       return data?.map((item) => {
         const { children, ...rest } = item;
         const title = item.title;
@@ -57,22 +59,19 @@ export const useTree = (data: DataNode[]) => {
           title,
           key: item.key,
           parentNodes: parentNodes?.slice(),
-          parentKeys: parentKeys?.slice(),
+          parentKeys: parentKeys?.slice()
         };
 
         if (item.children) {
           const childrenNodes = deepChildren(children);
           const extendParams = {
-            childrenKeys: childrenNodes?.map((item) => item.key),
+            childrenKeys: childrenNodes?.map((item: DataNode) => item.key),
             childrenNodes: childrenNodes,
             children: loop(
               item.children,
-              [
-                ...parentNodes,
-                { key: item.key, title: item.title, disabled: item.disabled },
-              ],
-              [...parentKeys, item.key],
-            ),
+              [...parentNodes, { key: item.key, title: item.title, disabled: item.disabled }],
+              [...parentKeys, item.key]
+            )
           };
           Object.assign(options, extendParams);
         }
@@ -95,6 +94,6 @@ export const useTree = (data: DataNode[]) => {
     treeData: data,
     treeDataMap: treeNodeMapRef.current,
     treeDataArray: flatTreeDataRef.current,
-    getTreeNodeInfo: getTreeNodeInfo,
+    getTreeNodeInfo: getTreeNodeInfo
   };
 };

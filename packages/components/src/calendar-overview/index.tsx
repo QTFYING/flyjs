@@ -26,8 +26,9 @@ const monthArr = [
 const FULL_DATE = 'YYYY-MM-DD';
 const DAY = 'DD';
 
+// @ts-ignore
 locale.DatePicker.lang = {
-  ...locale.DatePicker.lang,
+  ...locale?.DatePicker?.lang,
   monthFormat: 'M月',
   shortWeekDays: ['日', '一', '二', '三', '四', '五', '六'],
 };
