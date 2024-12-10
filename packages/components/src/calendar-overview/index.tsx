@@ -9,20 +9,7 @@ import { If } from '../if';
 import MyCalendar from './calendar-local';
 import './index.less';
 
-const monthArr = [
-  '01',
-  '02',
-  '03',
-  '04',
-  '05',
-  '06',
-  '07',
-  '08',
-  '09',
-  '10',
-  '11',
-  '12',
-];
+const monthArr = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 const FULL_DATE = 'YYYY-MM-DD';
 const DAY = 'DD';
 
@@ -51,15 +38,7 @@ export function CalendarOverview() {
       <Row style={{ paddingBottom: 10 }}>
         {monthArr.map((item, index) => {
           return (
-            <Col
-              xxl={6}
-              xl={8}
-              lg={8}
-              md={12}
-              sm={12}
-              key={index}
-              style={{ padding: '4px 4px' }}
-            >
+            <Col xxl={6} xl={8} lg={8} md={12} sm={12} key={index} style={{ padding: '4px 4px' }}>
               <ConfigProvider locale={locale}>
                 <MyCalendar
                   fullscreen={false}
@@ -72,19 +51,13 @@ export function CalendarOverview() {
                     const d = Lunar.fromDate(date.toDate());
                     const lunar = d.getDayInChinese();
                     const solarTerm = d.getJieQi();
-                    const h = HolidayUtil.getHoliday(
-                      date.get('year'),
-                      Number(date.get('month')) + 1,
-                      date.get('date'),
-                    );
+                    const h = HolidayUtil.getHoliday(date.get('year'), Number(date.get('month')) + 1, date.get('date'));
                     const month = moment(date).format('MM');
                     // const isHoliday = holiday?.includes(
                     //   moment(date).format(FULL_DATE),
                     // );
                     const isHoliday = !!h && !h?.isWork();
-                    const isSelect = selectArr.includes(
-                      moment(date).format(FULL_DATE),
-                    );
+                    const isSelect = selectArr.includes(moment(date).format(FULL_DATE));
                     // const isWorkday = workday?.includes(
                     //   moment(date).format(FULL_DATE),
                     // );
@@ -92,8 +65,7 @@ export function CalendarOverview() {
                     const text = moment(date).format(DAY);
                     // if (item !== month) return null; // 不渲染非当月的日期
 
-                    const displayHoliday =
-                      h?.getTarget() === h?.getDay() ? h?.getName() : undefined;
+                    const displayHoliday = h?.getTarget() === h?.getDay() ? h?.getName() : undefined;
 
                     return (
                       <div className="calendar-day-content">
@@ -107,9 +79,7 @@ export function CalendarOverview() {
                           })}
                         >
                           <div>{text}</div>
-                          <div style={{ fontSize: 8 }}>
-                            {displayHoliday || solarTerm || lunar}
-                          </div>
+                          <div style={{ fontSize: 8 }}>{displayHoliday || solarTerm || lunar}</div>
                           <If isTrue={isHoliday}>
                             <span className="sign rest">休</span>
                           </If>
@@ -121,11 +91,7 @@ export function CalendarOverview() {
                     );
                   }}
                   headerRender={({ value }) => {
-                    return (
-                      <div className="calendar-header">
-                        {moment(value).format('MM月')}
-                      </div>
-                    );
+                    return <div className="calendar-header">{moment(value).format('MM月')}</div>;
                   }}
                 />
               </ConfigProvider>

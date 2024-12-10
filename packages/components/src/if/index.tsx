@@ -1,4 +1,4 @@
-import { type FC, Fragment, ReactNode } from 'react';
+import React, { type FC, Fragment, ReactNode } from 'react';
 
 interface IIFProps {
   /**
