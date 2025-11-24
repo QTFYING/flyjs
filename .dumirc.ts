@@ -17,7 +17,7 @@ export default defineConfig({
       { type: 'components', dir: 'packages/components/src' },
       { type: 'hooks', dir: 'packages/hooks/src' },
       { type: 'utils', dir: 'packages/utils/src' },
-      { type: 'example', dir: 'packages/example/src' },
+      { type: 'payments', dir: 'packages/payments/src' },
       { type: 'rules', dir: 'packages/rules/src' },
     ],
   },
@@ -26,6 +26,7 @@ export default defineConfig({
     '@flylib/antd': join(__dirname, 'packages/components/src'),
     '@flylib/hooks': join(__dirname, 'packages/hooks/src'),
     '@flylib/utils': join(__dirname, 'packages/utils/src'),
+    '@flylib/payments': join(__dirname, 'packages/payments/src'),
   },
   themeConfig: {
     logo: 'https://img.icons8.com/stickers/300/woody-woodpecker.png',
@@ -35,14 +36,14 @@ export default defineConfig({
       { title: '组件', link: '/components/overview' },
       { title: 'Hooks', link: '/hooks/overview' },
       { title: 'Utils', link: '/utils/overview' },
-      { title: '用例', link: '/example/overview' },
-      { title: '开发标准', link: '/rules/overview' },
+      { title: '收银台', link: '/payments/overview' },
+      // { title: '开发标准', link: '/rules/overview' },
     ],
     prefersColor: { default: 'light', switch: false }, //主题色
     socialLinks: {
       github: 'https://github.com/qtfying/flyjs',
     },
-    footer: 'Copyright © 2024 | 寄蜉蝣于天地，心在水，水在渊，即天下共水',
+    footer: 'Copyright © 2025 | 寄蜉蝣于天地，渺沧海之一粟',
   },
   cssMinifierOptions: { minifyWhitespace: true, minifySyntax: true },
   jsMinifierOptions: {

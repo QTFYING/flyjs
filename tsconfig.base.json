@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@@/*": [".dumi/tmp/*"],
+      "@flylib/antd/*": ["packages/components/src/*"],
+      "@flylib/hooks/*": ["packages/hooks/src/*"]
+    },
+    "experimentalDecorators": true,
+    "typeRoots": ["./node_modules/@types", "./types"]
+  },
+  "include": [".dumirc.ts", "global.d.ts", "packages/**/*"],
+  "exclude": ["node_modules", "dist", "docs-dist"]
+}

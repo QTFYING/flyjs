@@ -1,7 +1,7 @@
 ---
-category: Components
+category: Payment
 title: 组件总览
 showImport: false
 ---
 
-关于该模块的说明
+关于Payment模块的说明
